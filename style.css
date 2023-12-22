@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+    --grayish-red: hsl(0, 6%, 24%);
+    /* - Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+    - Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
+}
+
+body {
+    min-height: 100vh;
+    font-size: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    position: relative;
+}
+
+main {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    align-self: start;
+    display: inline-block;
+    padding: 1.75rem 0 1.5rem 1.75rem;
+}
+
+
+header img {
+    object-fit: contain;
+    object-position: center;
+    width: 100px;
+}
+
+.hero-img {
+    background-image: url(./images/hero-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 375px;
+    height: 250px;
+}
+
+
+h1 {
+    margin-top: 3rem;
+    padding: 0 2rem;
+    color: var(--grayish-red);
+    font-weight: 600;
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+    line-height: 2.65rem;
+}
+
+h1 span {
+    color: var(--desaturated-red);
+    font-weight: 300;
+}
+
+p {
+    padding: 0 2rem;
+    margin-top: 1rem;
+    font-size: .9rem;
+    line-height: 1.35rem;
+    color: var(--desaturated-red);
+}
+
+form {
+    width: 100%;
+    padding: 0 2rem;
+    padding-right: 2.5rem;
+    margin: 2rem auto;
+    max-width: 500px;
+}
+
+form div {
+    position: relative;
+}
+
+.icon-error {
+    position: absolute;
+    right: 90px;
+    top: 15px;
+    z-index: 99;
+}
+
+input, button {
+    outline: none;
+    border-radius: 26px;
+    font-size: 13.5px;
+    font-weight: 600;
+    border: none;
+}
+
+.email {
+    width: 100%;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    border: 2px solid hsl(0, 6%, 80%);
+    color: hsl(0, 6%, 34%);
+    transition-duration: 250ms;
+
+}
+
+.email::placeholder {
+    color: hsl(0, 6%, 84%);
+}
+
+
+button[type="submit"] {
+    box-shadow: 9px 10px 30px 5px rgba(206,151,151,0.44);
+    background: linear-gradient(135deg,hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: .90rem 2rem;
+    cursor: pointer;
+    transition-duration: 125ms;
+
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 80%, 86%));
+}
+
+
+
+.email-error {
+    border: 2px solid var(--soft-red);
+}
+
+.text-error {
+    color: var(--soft-red);
+    display: inline-block;
+    margin-top: .75rem;
+    margin-left: 1.75rem;
+    font-size: .80rem;
+    font-weight: 500;
+}
+
+.hide {
+    display: none;
+}
+
+
+@media screen and (min-width: 1000px) { 
+    body {
+        background: url("./images/bg-pattern-desktop.svg") no-repeat;
+        background-position: left top;
+        background-size: 75%;
+    }
+
+    main {
+        flex-direction: row;
+        text-align: left;
+
+      }
+    
+    main div {
+        flex: 1;
+    }
+
+    
+    .right {
+        text-align: right;
+        align-self: flex-start;
+    }
+
+    .hero-img {
+        background-image: url(./images/hero-desktop.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+        display: inline-block;
+        width:610px; 
+        height: calc(100vh - 5px);
+        max-height: 800px;
+    }
+
+
+
+    .left {
+        min-height: 600px;
+        height: 100vh;
+        padding-left: .5rem;
+    }
+
+    .logo {
+        margin: 3.5rem 0 0rem 1.25rem;
+        flex: 0;
+    }
+
+    h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+        margin-top: 6rem;
+        max-width: 500px;
+    }
+
+    p {
+        margin-top: 2rem;
+        font-size: 1rem;
+        max-width: 500px;
+    }
+
+    form {
+        margin: 2.5rem 0 2rem  0;
+    }
+
+    button[type="submit"] {
+
+        padding: .90rem 2.25rem;
+    }
+    
+    .icon-error {
+        right: 100px;
+    }
+
+}
+
+
+footer {
+    transition-duration: 125ms;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    filter: opacity(0);
+}
+
+footer:hover {
+    filter: opacity(1);
+}
+
+
+
+@media screen and (min-height: 650px) {
+    .recize {
+        font-size: 4rem;
+        line-height: 4rem;
+        margin-top: 9rem;
+        max-width: 500px;
+    }
+}
